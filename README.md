@@ -27,7 +27,7 @@ Logical Cache Segmentation (LCS) is a counter-based replacement policy.
 - On a cache hit, the block’s counter is promoted to higher regions, allowing frequently accessed data to remain longer in the cache (improves Priority)
 ---
 
-## Features
+## Key Features
 
 - Trace-driven L1 cache simulation
 - Supports multiple replacement policies:
