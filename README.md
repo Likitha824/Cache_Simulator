@@ -1,5 +1,6 @@
 # Cache_Simulator
 Project Title:-Enhancement of Cache Performance using Adaptive Replacement Policy
+Course:CDA5106 -Advanced Computer Architecture 
 # Project Overview
 
 Modern processors rely heavily on cache memory to reduce average memory access time. Traditional cache replacement policies like **LRU** and **FIFO** perform well under stable workloads but struggle with dynamically changing access patterns.
