@@ -3,30 +3,28 @@ Project Title:-Enhancement of Cache Performance using Adaptive Replacement Polic
 
 Course:CDA5106 -Advanced Computer Architecture 
 
-## Project Description
+## Overview
 
-The goal of this project is to study how different cache replacement policies affect cache performance.  
+This project implements a cache simulator to study how different cache replacement policies affect cache performance. 
+The simulator processes benchmark memory access traces and evaluates cache behavior under various cache configurations.
 
-Modern processors rely heavily on cache memory to reduce average memory access time. Traditional cache replacement policies like **LRU** and **FIFO** perform well under stable workloads but struggle with dynamically changing access patterns.
-
-To address this limitation, this project proposes **Logical Cache Segmentation (LCS)** — a counter-based adaptive replacement policy that dynamically adjusts eviction likelihood using:
-- **4-bit counters (0–15)**
-- **Regions of Likeliness (ROLs)**
+Standard replacement policies such as **LRU** and **FIFO** are implemented and compared with an adaptive policy called **Logical Cache Segmentation (LCS)**. 
+Cache performance is analyzed using metrics such as hit rate, miss rate, and average access time (AAT).
 
 ---
 
 ## Logical Cache Segmentation (LCS)
 
-LCS assigns a **4-bit counter (range 0–15)** to each cache block and groups counter values into four **Regions of Likeliness (ROLs)**:
+Logical Cache Segmentation (LCS) is a counter-based replacement policy.
 
-- Most Likely to be Replaced (0–1)
-- Likely to be Replaced (2–5)
-- Less Likely to be Replaced (6–11)
-- Least Likely to be Replaced (12–15)
-
-Replacement decisions are based on the lowest counter value.  
-On cache hits, counters are promoted to higher regions, allowing frequently accessed data to remain longer in the cache.
-
+- Each cache block maintains a **4-bit counter (0–15)**
+- Counter values are grouped into four **Regions of Likeliness (ROLs)**:
+  - 0–1: Most Likely to be Replaced
+  - 2–5: Likely to be Replaced
+  - 6–11: Less Likely to be Replaced
+  - 12–15: Least Likely to be Replaced
+- On a cache miss, the block with the **lowest counter value** is selected for replacement
+- On a cache hit, the block’s counter is promoted to higher regions, allowing frequently accessed data to remain longer in the cache (improves Priority)
 ---
 
 ## Features
@@ -62,27 +60,37 @@ Cache_Simulator/
 ```
 
 
-## Evaluation
+## Evaluation Summary
 
-The simulator was tested using multiple benchmark traces including:
+The simulator was evaluated using multiple benchmark traces, including:
+- vortex
+- compress
+- gcc
+- perl
+- go
 
-vortex
+Results were used to compare LCS against LRU and FIFO under identical cache configurations.  
+Observed trends showed that LCS reduced miss rates for some workloads and performed comparably to LRU for others. Detailed results and graphs are documented in the project report.
 
-compress
+---
 
-gcc
+## Project Highlights
 
-perl
+- Implemented FIFO, LRU, and Logical Cache Segmentation (LCS) replacement policies
+- Evaluated cache performance using hit rate, miss rate, and average access time (AAT)
+- Observed lower miss rates for LCS compared to FIFO on multiple benchmark traces
+- Found LCS performance to be comparable to LRU for workloads such as perl and gcc
 
-go
 
-Performance metrics collected include:
+## Limitations
 
-Cache hit rate
+- LCS introduces additional storage overhead due to per-block counters
+- Performance depends on workload characteristics and cache configuration
 
-Cache miss rate
+## References 
 
-Average access time (AAT)
+The complete list of references used in this project is available in the project report.
 
-The results were used to compare LCS against LRU and FIFO under the same cache configurations.
-
+- Kharbutli & Solihin, Counter-Based Cache Replacement, IEEE
+- Reineke & Grund, Cache Replacement Sensitivity
+- Odule & Osinuga, Self-Adjusting Cache Replacement
