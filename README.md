@@ -71,6 +71,7 @@ Cache_Simulator/
 
 g++ SimulatorCacheDesign.cpp -o cache_simulator
 
+---
 ### Running the Simulator
 
 Run the simulator by providing a trace file as input:
