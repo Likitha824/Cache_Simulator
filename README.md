@@ -48,6 +48,7 @@ On cache hits, counters are promoted to higher regions, allowing frequently acce
 
 ## Repository Structure
 
+'''
 Cache_Simulator/
 ├── traces/ # Input trace files
 ├── validation_runs/ # Validation outputs
@@ -58,6 +59,7 @@ Cache_Simulator/
 ├── checkDiffChecker.sh
 ├── sim_cache # Generated executable
 └── README.md
+,,,
 
 
 ## Evaluation
