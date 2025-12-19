@@ -59,6 +59,29 @@ Cache_Simulator/
 └── README.md    # Project documentation
 ```
 
+## Getting Started
+
+### Prerequisites
+
+- C++ compiler (g++)
+- GNU Make
+
+---
+### Compilation
+
+g++ SimulatorCacheDesign.cpp -o cache_simulator
+
+### Running the Simulator
+
+Run the simulator by providing a trace file as input:
+
+./sim_cache <trace_file>
+
+Example:
+
+./sim_cache traces/gcc.trace
+
+
 ---
 ## Evaluation Summary
 
