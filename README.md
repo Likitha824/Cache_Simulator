@@ -48,15 +48,15 @@ Logical Cache Segmentation (LCS) is a counter-based replacement policy.
 
 ```
 Cache_Simulator/
-├── traces/ # Input trace files
-├── validation_runs/ # Validation outputs
-├── Globals.h # Global definitions and constants
-├── Structs.h # Data structures used in the simulator
-├── SimulatorCacheDesign.cpp# Main cache simulator implementation
-├── Makefile # Build instructions
-├── checkDiffChecker.sh # Script for output verification
-├── annotated-report.pdf # Detailed project report
-└── README.md # Project documentation
+├── traces/     # Input trace files
+├── validation_runs/     # Validation outputs
+├── Globals.h     # Global definitions and constants
+├── Structs.h    # Data structures used in the simulator
+├── SimulatorCacheDesign.cpp   # Main cache simulator implementation
+├── Makefile     # Build instructions
+├── checkDiffChecker.sh   # Script for output verification
+├── annotated-report.pdf    # Detailed project report
+└── README.md    # Project documentation
 ```
 
 ---
