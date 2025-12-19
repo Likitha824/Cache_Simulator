@@ -59,7 +59,7 @@ Cache_Simulator/
 └── README.md
 ```
 
-
+---
 ## Evaluation Summary
 
 The simulator was evaluated using multiple benchmark traces, including:
@@ -81,12 +81,12 @@ Observed trends showed that LCS reduced miss rates for some workloads and perfor
 - Observed lower miss rates for LCS compared to FIFO on multiple benchmark traces
 - Found LCS performance to be comparable to LRU for workloads such as perl and gcc
 
-
+---
 ## Limitations
 
 - LCS introduces additional storage overhead due to per-block counters
 - Performance depends on workload characteristics and cache configuration
-
+---
 ## References 
 
 The complete list of references used in this project is available in the project report.
